@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+
+   get 'service' => 'iti#service'
+   get 'company' => 'iti#company'
+   get 'recruit' => 'iti#recruit'
+   get 'contact' => 'iti#contact'
+   root 'iti#home'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
