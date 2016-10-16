@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Iti</title>
+  <title>ITI</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -12,29 +12,41 @@
   <header class="main-header">
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top" style="background-color: rgb(236, 240, 245);">
-      <%= image_tag "logo.png", size: "90x60" %>
+      <div class='logo-image'>
+        <%= link_to "/" do %>
+          <%= image_tag "logo.png", size: "90x60" %>
+        <%- end -%>
+      </div>
+      <div class='logo-title hidden-xs'>
+        <%= image_tag "logo-jp.jpg" %>
+      </div>
     </nav>
     <nav class="navbar navbar-static-top">
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
-          <li class="">
+          <li class="hidden-xs">
             <%= link_to "/" do %>
-            会社概要
+              HOME
             <%- end -%>
           </li>
           <li class="">
-            <%= link_to "/" do %>
-            事業内容
+            <%= link_to "company" do %>
+              COMPANY
             <%- end -%>
           </li>
-          <li class="user user-menu">
-            <%= link_to "/" do %>
-            採用情報
+          <li class="">
+            <%= link_to "service" do %>
+              SERVICE
             <%- end -%>
           </li>
-          <li class="user user-menu">
-            <%= link_to "/" do %>
-            お問い合わせ
+          <li class="">
+            <%= link_to "recruit" do %>
+              RECRUIT
+            <%- end -%>
+          </li>
+          <li class="hidden-xs">
+            <%= mail_to "info@itisiti.com" do %>
+              CONTACT
             <%- end -%>
           </li>
         </ul>
@@ -46,22 +58,33 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-    aaaaaaaaaaaaaaa
+      <h1>
+      <%- case controller.action_name -%>
+      <%- when 'home' -%>
+      <%- when 'company' -%>
+        Company
+      <%- when 'service' -%>
+        Service
+      <%- when 'recruit' -%>
+        Recruit
+      <%- when 'contact' -%>
+        Contact
+      <%- end -%>
+      </h1>
+    </section>
+    <!-- Content -->
+    <section class="content">
+      <%= yield %>
     </section>
 
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <div class="pull-right hidden-xs">
-      <b>Version</b> 1.0.0
-    </div>
-    <strong>Copyright &copy; 2015-<%=Time.now.year%> ITI.Inc.</strong> All rights reserved.
+    <strong>Copyright &copy; 2015-<%=Time.now.year%> ITI Inc.</strong> All rights reserved.
   </footer>
 
 </div>
 <!-- ./wrapper -->
-
-<%= yield %>
 
 </body>
 </html>

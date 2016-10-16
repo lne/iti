@@ -1,3 +1,123 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
+
+@import url(https://fonts.googleapis.com/css?family=Dancing+Script);
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
+ 
+body {
+  font-family: 'Source Sans Pro', 'Noto Sans JP', sans-serif;
+}
+
 .navbar,.content-wrapper, .right-side, .main-footer {
   margin-left: 0 !important;
+}
+.skin-blue .main-header .navbar {
+  background-color: rgb(156,190,189);
+}
+dl.summary {
+  overflow: hidden;
+  font-size: 14px;
+  dt {
+    width: 100px;
+    float: left;
+    clear: both;
+    margin-top: 10px;
+    color: #993333;
+  }
+  dd {
+    padding: 0 0 5px 120px;
+  }
+  dd.one {
+    margin-top: 10px;
+  }
+}
+
+.box-header {
+  h3 {
+    color: #009999;
+  }
+}
+.table-bordered > thead > tr > th, .table-bordered > tbody > tr > th, 
+.table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, 
+.table-bordered > tbody > tr > td, .table-bordered > tfoot > tr > td {
+  border: 1px solid #dbdbdb;
+}
+
+tr {
+  td:first-child {
+    background-color: #f4f4f4;
+  }
+}
+
+div.logo-image {
+  display: inline-block;
+  margin-left: 15px;
+}
+div.logo-title {
+  display: inline-block;
+  margin-left: 50px;
+} 
+
+td {
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+div.box-solid {
+  .box-header {
+    h3.box-title {
+      color: white;
+    }
+  }
+  .box-body {
+    p {
+      white-space: nowrap;
+      width: 100%;
+      overflow: hidden;
+      -o-text-overflow: ellipsis;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+.topic {
+  height: 225px;
+  color: white;
+  background-color: #009999;
+  background-image: url("/bg.png");
+  margin-bottom: 15px;
+  border-radius: 3px;
+  padding: 15px;
+  text-align: center;
+  p.message {
+    font-size: 58px;
+    font-family: 'Dancing Script', cursive;
+  }
+  p.pull-right {
+    font-size: 18px;
+    font-family: 'Open Sans Condensed', sans-serif;
+  }
+}
+
+@media (max-width: 768px) {
+  .topic {
+    p.message {
+      font-size: 28px;
+    }
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .topic {
+    p.message {
+    }
+  }
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+  .topic {
+    p.message {
+    }
+  }
+}
+@media (min-width: 1200px) {
 }
